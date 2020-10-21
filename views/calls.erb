@@ -1,0 +1,58 @@
+<table id="tabla" class="display" style="width:100%">
+	<thead>
+		<tr>
+			<th>Número registrado</th>
+			<th>Fecha de llamada</th>
+			<th>Audio</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @llamadas.each do |r| %>
+			<tr>
+				<td><%= @llamadas.telefono %></td>
+				<td><%= @llamadas.fecha %></td>
+				<td>
+                    <audio>
+	                    <source src="<%= @llamadas.link %>" type="audio/wav">
+                    </audio>
+                </td>
+			</tr>
+		<% end %>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Número registrado</th>
+			<th>Fecha de llamada</th>
+			<th>Audio</th>
+		</tr>
+	</tfoot>
+</table>
+
+<script>
+        $(document).ready(function() {
+        // Setup - add a text input to each footer cell
+        $('#tabla tfoot th').each( function () {
+            var title = $(this).text();
+            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+        } );
+    
+        // DataTable
+        var table = $('#tabla').DataTable({
+            initComplete: function () {
+                // Apply the search
+                this.api().columns().every( function () {
+                    var that = this;
+    
+                    $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                        if ( that.search() !== this.value ) {
+                            that
+                                .search( this.value )
+                                .draw();
+                        }
+                    } );
+                } );
+            }
+        });
+    
+    } );
+</script>
