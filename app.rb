@@ -7,7 +7,7 @@ require 'sinatra'
 set :bind, '0.0.0.0'
 
 $empleados = Array.new
-$consulta = Users.all
+$consulta = User.all
 $consulta.each do |r|
     $empleados.push(r['usuario'], r['pass'])
 end
