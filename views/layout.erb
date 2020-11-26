@@ -16,6 +16,7 @@
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
+                align: left;
             }
             body{
                 margin:50px 0px; padding:0px;
@@ -26,8 +27,8 @@
     </head>
 
     <body>
+        <img src="<%= url('images/logo.jpg') %>" alt="Mr.Nodo" style="width:80px">
         <ul>
-            <li><img src="<%= url('images/logo.jpg') %>" alt="Mr.Nodo" style="width:60px"></li>
             <li><a href="/">Inicio</a></li>
         </ul>
         <%= yield %>
