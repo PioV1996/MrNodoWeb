@@ -1,5 +1,14 @@
 <style>
-input{
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+  text-align: center;
+}
+input[type=password]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -12,7 +21,7 @@ input{
 <h1>Bienvenido a la plataforma para visualizar llamadas de usuarios</h1>
 
 <form action='/login' method='post'>
-    <label for='user_name'>Nombre de usuario:</label>
+    <label for='user_name'>Nombre de usuario</label>
     <input type='text' id='usr_name' name='usr_name'>
     <br><br>
     <label for='pass'>Ingrese contraseña</label>
