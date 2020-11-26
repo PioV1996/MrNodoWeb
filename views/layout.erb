@@ -8,11 +8,21 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.css"/>           
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="./styles.css">
+        <style>
+            li {
+                display: inline;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
     </head>
 
     <body>
         <ul>
-            <li><img src="/images/logo.jpg" style="width:30px"></li>
+            <li><img src="../images/logo.jpg" style="width:30px"></li>
             <li><a href="/">Inicio</a></li>
         </ul>
         <%= yield %>
