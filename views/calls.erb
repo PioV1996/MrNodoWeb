@@ -9,11 +9,11 @@
 	<tbody>
 		<% @llamadas.each do |r| %>
 			<tr>
-				<td><%= @llamadas.telefono %></td>
-				<td><%= @llamadas.fecha %></td>
+				<td><%= r.telefono %></td>
+				<td><%= r.fecha %></td>
 				<td>
                     <audio>
-	                    <source src="<%= @llamadas.link %>" type="audio/wav">
+	                    <source src="<%= r.link %>" type="audio/wav">
                     </audio>
                 </td>
 			</tr>
