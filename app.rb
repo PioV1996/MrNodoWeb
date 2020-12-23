@@ -9,6 +9,7 @@ set :bind, '0.0.0.0'
 $empleados = Array.new
 $consulta = User.all
 $consulta.each do |r|
+    puts 'Nombres de usuario' + r['usuario']
     $empleados.push(r['usuario'], r['pass'])
 end
 
