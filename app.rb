@@ -9,7 +9,6 @@ set :bind, '0.0.0.0'
 $empleados = Array.new
 $consulta = User.all
 $consulta.each do |r|
-    puts 'Nombres de usuario' + r['usuario']
     $empleados.push(r['usuario'], r['pass'])
 end
 
@@ -22,7 +21,9 @@ post '/login' do
     @pass    = params['pass']
 
     user = $empleados.include?(@usuario)
+    puts user
     pass = $empleados.include?(@pass)
+    puts pass
     if user == true && pass == false
         erb :pass_fail
     elsif user == false
