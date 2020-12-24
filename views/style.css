@@ -97,7 +97,7 @@ input[type=text], input[type=password]{
     }
     
     input[type=text], input[type=password]{
-        font-size: 30px;
+        font-size: 20px;
         padding: 10px;
         border: none;
         border-radius: 30px;
